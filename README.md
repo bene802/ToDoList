@@ -1,9 +1,9 @@
 # ToDoList
 
-A TODO list web application.
+  - A TODO list web application.
 
-PHP and Laravel framework for Backend.
+  - PHP and Laravel framework for Backend.
 
-AngularJS for Frontend.
+  - AngularJS for Frontend.
 
-MySQL
+  - MySQL
