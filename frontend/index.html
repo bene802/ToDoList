@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div ng-app="todoapp" ng-controller="appCtrl">
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Todo List</a>
+    </nav>
+
+    <main role="main" class="container">
+        <div style="padding-top: 20px"></div>
+            <div class="row">
+                <div class="pb-1 pl-2 pr-2 col-sm-8">
+                    <input type="text" class="form-control" placeholder="task" ng-model="task">
+                </div>
+                <div class="pb-1 pl-2 pr-2 col-sm-2">
+                    <select ng-model="status" ng-options="status for status in statuses"></select>
+                </div>
+                <div class="pb-1 pl-2 pr-2 col-sm-2">
+                    <button class="btn btn-info" ng-click="createTask()">Create</button>
+                </div>
+            </div>
+            <div class="border-bottom border-gray pb-2 mb-0">
+                <h6>TodoList</h6>
+            </div>
+            <div class="media text-muted pt-2 border-gray media-body pb-1 mb-0 small lh-125 border-bottom  col-sm-12" ng-repeat="task in todoList">
+                    <div style="float:left; padding-right: 5px;">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                        <i class="fas fa-minus-circle" style="font-size: 32px; cursor: pointer;" ng-click="deleteTask(task.id)"></i>
+                                </div>
+                            </div>
+                        </div>
+                <div>
+                    <strong class="d-block text-gray-dark">@task</strong>{{task.task}}, {{task.status}}
+                </div>
+            </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./js/todoapp.js"></script>
+</div>
+</body>
+</html>
